@@ -7,6 +7,7 @@ function MainLayuot() {
     <div>
       <Navbar />
       TEST
+      <h1>TEST2</h1>
       <Outlet />
     </div>
   );
