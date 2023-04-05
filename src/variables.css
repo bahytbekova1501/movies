@@ -1,0 +1,19 @@
+:root {
+  /* font family */
+  --main-family: "Inter", sans-serif;
+
+  /* font size */
+  --main-size: 18px;
+  --nav-size: 16px;
+  --section-title-size: 64px;
+  --service-title-size: 40px;
+
+  /* colors */
+  --main-color: #000000;
+  --secondary-color: #14213d;
+  --primary-color: #fca311;
+  --third-color: #e5e5e5;
+  --white-color: #ffffff;
+
+  --container-width: 1200px;
+}
