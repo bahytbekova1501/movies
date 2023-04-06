@@ -8,7 +8,7 @@ function MainRoutes() {
   return (
     <Routes>
       <Route element={<MainLayuot />}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
       </Route>
     </Routes>
   );
