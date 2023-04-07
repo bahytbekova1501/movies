@@ -1,6 +1,8 @@
 :root {
   /* font family */
-  --main-family: "Inter", sans-serif;
+  --main-family: "Ledger", serif;
+  --secondary-family: "Playfair Display SC", serif;
+  --third-family: "Rubik Pixels", cursive;
 
   /* font size */
   --main-size: 18px;

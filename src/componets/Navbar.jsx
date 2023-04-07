@@ -18,6 +18,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import "../componets/css/navbar.css";
 
 import logo from "../logo/M-red.png";
 import { Link } from "react-router-dom";
@@ -65,6 +66,7 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [navbar, setNavbar] = React.useState(false);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const isNavOpen = Boolean(anchorElNav);
@@ -106,7 +108,8 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}>
+      onClose={handleMenuClose}
+    >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -127,7 +130,8 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}>
+      onClose={handleMobileMenuClose}
+    >
       <MenuItem>
         <IconButton size="large" aria-label="show favorites" color="inherit">
           <Badge badgeContent={1} color="error">
@@ -142,7 +146,8 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit">
+          color="inherit"
+        >
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -164,14 +169,16 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isNavOpen}
-      onClose={handleCloseNavMenu}>
+      onClose={handleCloseNavMenu}
+    >
       <Box sx={{ width: "230px", backgroundColor: "#14213d" }}>
         <MenuItem sx={{ backgroundColor: "#14213d" }}>
           <Accordion sx={{ width: "230px", color: "#fca311" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
-              id="panel1a-header">
+              id="panel1a-header"
+            >
               <Typography> Category</Typography>
             </AccordionSummary>
             <Box>
@@ -193,7 +200,8 @@ export default function Navbar() {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
-              id="panel1a-header">
+              id="panel1a-header"
+            >
               <Typography> Category</Typography>
             </AccordionSummary>
             <AccordionDetails></AccordionDetails>
@@ -202,80 +210,98 @@ export default function Navbar() {
       </Box>
     </Menu>
   );
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        marginTop: "-10px",
-        marginLeft: "-8px",
-        marginRight: "-8px",
-      }}>
-      <AppBar
-        style={{
-          color: "#e5e5e5",
-          background: "transparent",
+    <nav className={navbar ? "navbar active" : "navbar"}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          marginTop: "-10px",
+          marginLeft: "-8px",
+          marginRight: "-8px",
         }}
-        position="static">
-        <Toolbar>
-          <IconButton
-            style={{ color: "#fca311" }}
-            onClick={handleOpenNavMenu}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton>
-          <div>
-            <img style={{ width: "40px" }} src={logo} alt="" srcset="" />
-          </div>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon style={{ color: "#fca311" }} />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+      >
+        <AppBar
+          style={{
+            color: "#e5e5e5",
+            background: "transparent",
+          }}
+          position="static"
+        >
+          <Toolbar>
             <IconButton
+              style={{ color: "#fca311" }}
+              onClick={handleOpenNavMenu}
               size="large"
-              aria-label="show favorites"
-              color="inherit">
-              <Badge badgeContent={1} color="error">
-                <FavoriteIcon style={{ color: "#fca311" }} />
-              </Badge>
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
             </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit">
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit">
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-      {renderNavMenu}
-    </Box>
+            <div>
+              <img style={{ width: "40px" }} src={logo} alt="" srcset="" />
+            </div>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon style={{ color: "#fca311" }} />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                size="large"
+                aria-label="show favorites"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="error">
+                  <FavoriteIcon style={{ color: "#fca311" }} />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+        {renderNavMenu}
+      </Box>
+    </nav>
   );
 }
