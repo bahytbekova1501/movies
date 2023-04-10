@@ -12,16 +12,14 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import GradeIcon from "@mui/icons-material/Grade";
+
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../componets/css/navbar.css";
 
 import logo from "../logo/M-red.png";
-import { Link } from "react-router-dom";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -108,8 +106,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -130,12 +127,11 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <IconButton size="large" aria-label="show favorites" color="inherit">
           <Badge badgeContent={1} color="error">
-            <FavoriteIcon />
+            <GradeIcon />
           </Badge>
         </IconButton>
         <p> Favorites</p>
@@ -146,8 +142,7 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -169,16 +164,14 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isNavOpen}
-      onClose={handleCloseNavMenu}
-    >
+      onClose={handleCloseNavMenu}>
       <Box sx={{ width: "230px", backgroundColor: "#14213d" }}>
         <MenuItem sx={{ backgroundColor: "#14213d" }}>
           <Accordion sx={{ width: "230px", color: "#fca311" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
+              id="panel1a-header">
               <Typography> Category</Typography>
             </AccordionSummary>
             <Box>
@@ -200,8 +193,7 @@ export default function Navbar() {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
+              id="panel1a-header">
               <Typography> Category</Typography>
             </AccordionSummary>
             <AccordionDetails></AccordionDetails>
@@ -228,15 +220,13 @@ export default function Navbar() {
           marginTop: "-10px",
           marginLeft: "-8px",
           marginRight: "-8px",
-        }}
-      >
+        }}>
         <AppBar
           style={{
             color: "#e5e5e5",
             background: "transparent",
           }}
-          position="static"
-        >
+          position="static">
           <Toolbar>
             <IconButton
               style={{ color: "#fca311" }}
@@ -245,8 +235,7 @@ export default function Navbar() {
               edge="start"
               color="inherit"
               aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
+              sx={{ mr: 2 }}>
               <MenuIcon />
             </IconButton>
             <div>
@@ -266,10 +255,9 @@ export default function Navbar() {
               <IconButton
                 size="large"
                 aria-label="show favorites"
-                color="inherit"
-              >
+                color="inherit">
                 <Badge badgeContent={1} color="error">
-                  <FavoriteIcon style={{ color: "#fca311" }} />
+                  <GradeIcon style={{ color: "#fca311" }} />
                 </Badge>
               </IconButton>
               <IconButton
@@ -279,8 +267,7 @@ export default function Navbar() {
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
+                color="inherit">
                 <AccountCircle />
               </IconButton>
             </Box>
@@ -291,8 +278,7 @@ export default function Navbar() {
                 aria-controls={mobileMenuId}
                 aria-haspopup="true"
                 onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
+                color="inherit">
                 <MoreIcon />
               </IconButton>
             </Box>
