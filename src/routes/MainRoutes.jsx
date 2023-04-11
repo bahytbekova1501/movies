@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import AddMoviesPage from "../pages/AddMoviesPage";
 import EditMoviesPage from "../pages/EditMoviesPage";
 import DetailsPage from "../pages/DetailsPage";
+import AuthPage from "../pages/AuthPage";
 
 function MainRoutes() {
   return (
@@ -15,6 +16,7 @@ function MainRoutes() {
         <Route path="/edit/:id" element={<EditMoviesPage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
       </Route>
+      <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );
 }

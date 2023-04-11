@@ -5,4 +5,6 @@ export const ACTIONS = {
   movies: "movies",
   oneMovie: "oneMovie",
   pageTotalCount: "pageTotalCount",
+  user: "user",
 };
+export const ADMINS = ["admin@gmail.com"];

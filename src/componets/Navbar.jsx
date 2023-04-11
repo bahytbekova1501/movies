@@ -15,11 +15,31 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import GradeIcon from "@mui/icons-material/Grade";
 
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "../componets/css/navbar.css";
 
 import logo from "../logo/M-red.png";
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
+
+let pages = [
+  {
+    title: "home",
+    link: "/",
+  },
+];
+
+const adminPages = {
+  title: "add",
+  link: "/add",
+};
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -61,6 +81,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const { user, logout, isAdmin } = useAuthContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -94,6 +115,7 @@ export default function Navbar() {
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
+      // sx={{ backgroundColor: "black" }}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -107,14 +129,19 @@ export default function Navbar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}>
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem sx={{ backgroundColor: "black" }} onClick={handleMenuClose}>
+        Profile
+      </MenuItem>
+      <MenuItem sx={{ backgroundColor: "black" }} onClick={handleMenuClose}>
+        My account
+      </MenuItem>
     </Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
+      // sx={{ backgroundColor: "black" }}
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -128,7 +155,7 @@ export default function Navbar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}>
-      <MenuItem>
+      <MenuItem sx={{ backgroundColor: "black" }}>
         <IconButton size="large" aria-label="show favorites" color="inherit">
           <Badge badgeContent={1} color="error">
             <GradeIcon />
@@ -136,7 +163,9 @@ export default function Navbar() {
         </IconButton>
         <p> Favorites</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem
+        sx={{ backgroundColor: "black" }}
+        onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -167,7 +196,48 @@ export default function Navbar() {
       onClose={handleCloseNavMenu}>
       <Box sx={{ width: "230px", backgroundColor: "#14213d" }}>
         <MenuItem sx={{ backgroundColor: "#14213d" }}>
-          <Accordion sx={{ width: "230px", color: "#fca311" }}>
+          {isAdmin()
+            ? pages.concat(adminPages).map((page) => (
+                <Accordion sx={{ width: "230px", color: "#fca311" }}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <Typography> Pages</Typography>
+                  </AccordionSummary>
+                  <Box>
+                    <AccordionDetails>
+                      <IconButton
+                        component={Link}
+                        to={page.link}
+                        sx={{ fontSize: "16px", color: "#000000" }}>
+                        {page.title}
+                      </IconButton>
+                    </AccordionDetails>
+                  </Box>
+                </Accordion>
+              ))
+            : pages.map((page) => (
+                <Accordion sx={{ width: "230px", color: "#fca311" }}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <Typography> Pages</Typography>
+                  </AccordionSummary>
+                  <Box>
+                    <AccordionDetails>
+                      <IconButton
+                        component={Link}
+                        to={page.link}
+                        sx={{ fontSize: "16px", color: "#000000" }}>
+                        {page.title}
+                      </IconButton>
+                    </AccordionDetails>
+                  </Box>
+                </Accordion>
+              ))}
+          {/* <Accordion sx={{ width: "230px", color: "#fca311" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -186,10 +256,10 @@ export default function Navbar() {
                 </IconButton>
               </AccordionDetails>
             </Box>
-          </Accordion>
+          </Accordion> */}
         </MenuItem>
         <MenuItem>
-          <Accordion sx={{ width: "230px", color: "#fca311" }}>
+          {/* <Accordion sx={{ width: "230px", color: "#fca311" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -197,7 +267,7 @@ export default function Navbar() {
               <Typography> Category</Typography>
             </AccordionSummary>
             <AccordionDetails></AccordionDetails>
-          </Accordion>
+          </Accordion> */}
         </MenuItem>
       </Box>
     </Menu>
@@ -260,16 +330,27 @@ export default function Navbar() {
                   <GradeIcon style={{ color: "#fca311" }} />
                 </Badge>
               </IconButton>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit">
-                <AccountCircle />
-              </IconButton>
+              {user ? (
+                // <Tooltip title="Open settings">
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit">
+                  <AccountCircle />
+                </IconButton>
+              ) : (
+                // </Tooltip>
+                <Button component={Link} to="/auth" color="inherit">
+                  login
+                </Button>
+              )}{" "}
+              <Button onClick={logout}>
+                <Typography textAlign="center">logout</Typography>
+              </Button>
             </Box>
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
               <IconButton

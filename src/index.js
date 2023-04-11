@@ -5,12 +5,15 @@ import "./variables.css";
 
 import App from "./App";
 import MoviesContext from "./contexts/MoviesContext";
+import AuthContext from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <MoviesContext>
-      <App />
+      <AuthContext>
+        <App />
+      </AuthContext>
     </MoviesContext>
   </BrowserRouter>
 );
