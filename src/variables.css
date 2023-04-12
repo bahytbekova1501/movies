@@ -1,6 +1,7 @@
 :root {
   /* font family */
-  --main-family: "Inter", sans-serif;
+  --main-family: "Ledger", serif;
+  --secondary-family: "Playfair Display SC", serif;
 
   /* font size */
   --main-size: 18px;
@@ -14,6 +15,8 @@
   --primary-color: #fca311;
   --third-color: #e5e5e5;
   --white-color: #ffffff;
-
+  --lightred-color: #ba3b0a;
+  --juicyred-color: #8c2902;
+  --red-color: #621f04;
   --container-width: 1200px;
 }

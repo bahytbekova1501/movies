@@ -1,0 +1,664 @@
+{
+  "all": [
+    {
+      "id": 1,
+      "name_original": "Black Adam",
+      "name_russian": "Чёрный Адам ",
+      "year": "2022",
+      "rating": 6.1,
+      "time": "2:04",
+      "age_restriction": "12+",
+      "description": "Фильм расскажет историю происхождения суперзлодея - Чёрного Адама, который впервые появился в комиксах DC 1945 года. В оригинале он был принцем Древнего Египта, которого могущественный волшебник Шазам избрал своим преемником. Однако ученик восстал, и разочарованный учитель, не имея возможности отобрать подаренные сверхъестественные силы, заселил злодея в дальнюю звёздную систему. Чтобы вернуться, Чёрном Адаму потребовалось пять тысяч лет.",
+      "trailer": "https://www.youtube.com/embed/qTLqSkKd5Wg",
+      "video": "https://vk.com/video_ext.php?oid=-143260624&id=456240706&hash=3be0a547d24c8db6&hd=2",
+      "country": "США,Канада",
+      "category": "movie",
+      "type": "Фильм",
+      "price": "10",
+      "time_minutes": 125,
+      "count": "20",
+      "poster": "https://s7.vcdn.biz/static/f/5334600751/image.jpg",
+      "actors": [
+        {
+          "id": 1,
+          "role": "Черный адам",
+          "actors_nik": "Дуэйн Джонсон",
+          "actors_photo": "https://www.film.ru/sites/default/files/styles/thumb_260x320/public/people/1456177-1428238.jpg"
+        },
+        {
+          "id": 2,
+          "role": "Исида",
+          "actors_nik": "Сара Шахи",
+          "actors_photo": "https://www.film.ru/sites/default/files/people/2131475-2425254.jpg"
+        },
+        {
+          "id": 3,
+          "role": "Супермен",
+          "actors_nik": "Генри Кавилл",
+          "actors_photo": "https://n1s1.hsmedia.ru/c8/90/64/c8906493f39ae3f7613321aa19d02f46/600x600_1_437ac0764c56acaa7dc213ee61da00cf@1200x1200_0xac120003_2604257191667384651.jpeg"
+        },
+        {
+          "id": 4,
+          "role": "Кент Нельсон",
+          "actors_nik": "Пирс Броснан",
+          "actors_photo": "https://phototass1.cdnvideo.ru/width/1020_b9261fa1/tass/m2/uploads/i/20180525/4704746.jpg"
+        },
+        {
+          "id": 5,
+          "role": "Циклон",
+          "actors_nik": "Куинтесса Суинделл",
+          "actors_photo": "https://static.kinoafisha.info/k/persons/1080x1920/upload/persons/243825272928.jpg"
+        },
+        {
+          "id": 6,
+          "role": "Альберт Ротштейн",
+          "actors_nik": "Ной Сентинео",
+          "actors_photo": "https://static.kinoafisha.info/k/persons/1080x1920/upload/persons/784642622947.jpg"
+        },
+        {
+          "id": 7,
+          "role": "Амон Томаж",
+          "actors_nik": "Бодхи Сабонги",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFT3kcSFaGOwSlpqFyfcIg0RVx2sTjE7l5HGlg3cCL&s"
+        },
+        {
+          "id": 8,
+          "role": "Саббак",
+          "actors_nik": "Марван Кензари",
+          "actors_photo": "https://s7.vcdn.biz/static/f/2318133121/image.jpg"
+        },
+        {
+          "id": 9,
+          "role": "Аманда Уоллер",
+          "actors_nik": "Виола Дэвис",
+          "actors_photo": "https://static.wikia.nocookie.net/suicide-squad/images/7/7c/%D0%92%D0%B8%D0%BE%D0%BB%D0%B0_%D0%94%D1%8D%D0%B2%D0%B8%D1%81.jpg/revision/latest?cb=20160715142239&path-prefix=ru"
+        },
+        {
+          "id": 10,
+          "role": "Человек-ястреб",
+          "actors_nik": "Элдис Ходж",
+          "actors_photo": "https://www.vokrug.tv/pic/person/3/4/b/d/34bddcad4a3696aa6b8222a3a5ebae1f.jpeg"
+        }
+      ],
+      "genres": [
+        {
+          "id": 1,
+          "name_ru": "фэнтези"
+        },
+        {
+          "id": 2,
+          "name_ru": "фантастика"
+        },
+        {
+          "id": 1,
+          "name_ru": "боевик"
+        },
+        {
+          "id": 1,
+          "name_ru": "приключения"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name_original": "Sen to Chihiro no kamikakushi",
+      "name_russian": "Унесённые призраками ",
+      "year": "2001",
+      "rating": 8.5,
+      "time": "2:05",
+      "age_restriction": "12+",
+      "description": "Тихиро с мамой и папой переезжает в новый дом. Заблудившись по дороге, они оказываются в странном пустынном городе, где их ждет великолепный пир. Родители с жадностью набрасываются на еду и к ужасу девочки превращаются в свиней, став пленниками злой колдуньи Юбабы. Теперь, оказавшись одна среди волшебных существ и загадочных видений, Тихиро должна придумать, как избавить своих родителей от чар коварной старухи.",
+      "trailer": "https://www.youtube.com/embed/bgxiTkAlQrw",
+      "video": "https://vk.com/video_ext.php?oid=121917368&id=456239943&hash=eb16601e07f64efb&hd=1",
+      "country": "Япония",
+      "category": "anime",
+      "type": "Аниме",
+      "price": "10",
+      "time_minutes": 125,
+      "count": "20",
+      "poster": "https://u.kanobu.ru/editor/images/29/d145a4ef-4e80-465e-afe8-0d187e990044.jpg",
+      "actors": [
+        {
+          "id": 1,
+          "actors_nik": "Хаку",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIjvegSBPXhuNFvbOXjP5c-2SBDZQyqR4Zxyy5dDKSQNyV_Y6PjHoWRPyimRafayIBKW4&usqp=CAU"
+        },
+        {
+          "id": 2,
+          "actors_nik": "Тихиро Огино",
+          "actors_photo": "https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk0ulNS75C_l_K3TJ5cWGdK6aKTM5SRkZCeTgDn6uOyic&fn=sqr_288"
+        },
+        {
+          "id": 3,
+          "actors_nik": "Бо",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReow8V25vJRPP2WpUXx_W0TzbmPdvpqxhREW1Ypul_&usqp=CAE&s"
+        },
+        {
+          "id": 4,
+          "actors_nik": "Юбаба",
+          "actors_photo": "https://i.pinimg.com/550x/bc/4a/4b/bc4a4beddce60bfa595a4b6e8ed7d5a1.jpg"
+        },
+        {
+          "id": 5,
+          "actors_nik": "Дедушка Камадзи",
+          "actors_photo": "https://i.movielib.ru/charpic/1580819/l/8e6f/Dedushka_Kamadzi.jpg"
+        },
+        {
+          "id": 6,
+          "actors_nik": "Рин",
+          "actors_photo": "https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkqX76oWWLU2wN39MqqbKs2qaKTM5SRkZCeTgDn6uOyic"
+        },
+        {
+          "id": 7,
+          "actors_nik": "Юко Огино",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qEon0Uw-TzkvpQ11NX5ce6_4Vz7IufUlACengqCq1lnJ-98A5Ny_hfUkE54K60N3Qh0&usqp=CAU"
+        },
+        {
+          "id": 8,
+          "actors_nik": "Акио Огино",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvaDMpgW52l28zECX_CMTdLVsH3C2upS73NBedHQTX&s"
+        },
+        {
+          "id": 9,
+          "actors_nik": "Каонаси",
+          "actors_photo": "https://fanfics.me/images/fandoms_heroes/117-1512775062.jpg"
+        }
+      ],
+      "genres": [
+        {
+          "id": 1,
+          "name_ru": "аниме"
+        },
+        {
+          "id": 2,
+          "name_ru": "приключения"
+        },
+        {
+          "id": 1,
+          "name_ru": "фэнтези"
+        }
+      ],
+      "episodes": [
+        {
+          "id": 1,
+          "episodes_number": "1",
+          "episodes_url": ""
+        },
+        {
+          "id": 2,
+          "episodes_number": "2",
+          "episodes_url": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name_original": "Puss in Boots: The Last Wish",
+      "name_russian": "Кот в сапогах 2: Последнее желание",
+      "year": "2022",
+      "rating": 8,
+      "time": "1:42",
+      "age_restriction": "",
+      "description": "Промотав восемь жизней из девяти и до смерти испугавшись пришедшего за ним волка-охотника за головами, Кот в сапогах внимает совету врача и заселяется в дом местной кошатницы. Там он смиряется с установленными порядками, отращивает бороду и теряет тягу к подвигам и приключениям, но только до тех пор, пока не узнаёт о волшебной карте, которая указывает путь к где-то упавшей Звезде желаний. Кот в сапогах твёрдо решает отыскать Звезду, чтобы вернуть свои жизни, и в компании притворявшегося кошачьим пёсика отправляется красть карту у известного коллекционера волшебных предметов Джека Хорнера.x  ",
+      "trailer": "https://www.youtube.com/embed/JA8Xw0ffel8",
+      "video": "https://vk.com/video_ext.php?oid=-212054141&id=456239867&hash=1ca63abad39dcf38&hd=2",
+      "country": "США,Япония",
+      "category": "cartoons",
+      "type": "Мультфильм",
+      "price": "10",
+      "time_minutes": 102,
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/19b2a831-d81b-4364-a82a-dc6ca779023f/600x900",
+      "actors": [
+        {
+          "id": 1,
+          "actors_nik": "Киса Мягколапка",
+          "actors_photo": "https://i.pinimg.com/474x/65/ca/6e/65ca6e89e9dc4195996b9fb4cc423cb1.jpg"
+        },
+        {
+          "id": 2,
+          "actors_nik": "Кот в сапогах",
+          "actors_photo": "https://img.kupigolos.ru/hero/5cd9d73b09a53.jpg?p=bh&s=0c0a1ce678c9b4593fb47cc2e92920d2"
+        },
+        {
+          "id": 3,
+          "actors_nik": "Златовласка",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQM5Gvro-YSsy_7ij0H_JFUqxccwdxBbPhK9O0iH-fmWK7JuSsBLsruDIIbErwYvf2GFk&usqp=CAU"
+        },
+        {
+          "id": 4,
+          "actors_nik": "Перитто",
+          "actors_photo": "https://a-static.besthdwallpaper.com/perrito-from-puss-in-boots-the-last-wish-wallpaper-2048x1536-109875_26.jpg"
+        },
+        {
+          "id": 5,
+          "actors_nik": "Волк(Смерть)",
+          "actors_photo": "https://static.wikia.nocookie.net/villains/images/8/8a/DeathPIB.jpg/revision/latest?cb=20221221222133"
+        },
+        {
+          "id": 6,
+          "actors_nik": "Джек Хорнер",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFdlAuk3D8pFgrJZIPK_wt51ZmqwrJP_YfA&usqp=CAU"
+        }
+      ],
+      "genres": [
+        {
+          "id": 1,
+          "name_ru": "мультфильм"
+        },
+        {
+          "id": 2,
+          "name_ru": "комедия"
+        },
+        {
+          "id": 3,
+          "name_ru": "приключения"
+        },
+        {
+          "id": 4,
+          "name_ru": "фэнтези"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name_original": "House of the Dragon",
+      "name_russian": "Дом Дракона",
+      "year": "2022",
+      "season": "1",
+      "rating": 8.8,
+      "quantity": "10",
+      "age_restriction": "18+",
+      "description": "Долгожданный приквел легендарного сериала «Игра престолов». В основу «Дома Дракона» лег первый том книги Джорджа Р.Р. Мартина «Пламя и кровь», где раскрывается история династии Таргариенов. В частности, семейство ввязывается в жестокую гражданскую войну, которая получила название «Танец драконов». Среди режиссеров сериала — Мигель Сапочник, ранее работавший над «Игрой престолов». Главные роли исполнили Мэтт Смит («Доктор Кто»), Эмма Д’Арси («Мисс Плохое Поведение») и Оливия Кук («Медленные лошади»). Автор оригинальной книги Джордж Мартин описывает сериал «Дом Дракона» как «шекспировскую трагедию», где нет однозначно положительных героев. То есть все в лучших традициях невероятной вселенной «Игры престолов»!",
+      "trailer": "https://www.youtube.com/embed/xTb3kepuvz4",
+      "video": "",
+      "country": "США",
+      "category": "series",
+      "type": "Сериал",
+      "price": "15",
+      "time_minutes": 60,
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/6/67/%D0%94%D0%BE%D0%BC%D0%94%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%B0%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg",
+      "actors": [
+        {
+          "id": 1,
+          "role": "Рейнира Таргариен",
+          "actors_nik": "Милли Олкок",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZy-_c7sqx-o36dr-6dy6oNijKhrC43aX6Q&usqp=CAU"
+        },
+        {
+          "id": 2,
+          "role": "Деймон Таргариен",
+          "actors_nik": "Мэтт Смит",
+          "actors_photo": "https://static.wikia.nocookie.net/doctorwho/images/f/f1/Matt_Smith.jpg/revision/latest?cb=20190514190233&path-prefix=ru"
+        },
+        {
+          "id": 3,
+          "role": "Рейнира Таргариен",
+          "actors_nik": "Эмма Д’Арси",
+          "actors_photo": "https://www.film.ru/sites/default/files/people/40074124-2303982.jpg"
+        },
+        {
+          "id": 4,
+          "role": "Алисент Хайтауэр",
+          "actors_nik": "Оливия Кук",
+          "actors_photo": "https://www.film.ru/sites/default/files/people/1605837-2251205.jpg"
+        },
+        {
+          "id": 5,
+          "role": "Алисент Хайтауэр",
+          "actors_nik": "Эмили Кэри ",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnblbE-u5pu33Zq4XdNDheztJ1lNzXEUiS7g&usqp=CAU"
+        },
+        {
+          "id": 6,
+          "role": "Эймонд Таргариен",
+          "actors_nik": "Юэн Митчелл",
+          "actors_photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/56189713-499d-4bcd-8f7b-f0a0191b15ca/360"
+        },
+        {
+          "id": 7,
+          "role": "Визерис I Таргариен",
+          "actors_nik": "Пэдди Консидайн",
+          "actors_photo": "https://www.vokrug.tv/pic/person/2/7/d/a/27da191d0f4cdbf4bbf41328b1a85bb2.jpeg"
+        },
+        {
+          "id": 8,
+          "role": "Принцесса Рейнис",
+          "actors_nik": "Ив Бест",
+          "actors_photo": "https://thumbs.dfs.ivi.ru/storage5/contents/a/d/5d9a910a758988f7866ba57dc4237e.jpg"
+        },
+        {
+          "id": 9,
+          "role": "Кристон Коль",
+          "actors_nik": "Фабьен Франкель",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe9f4qUtpdsOx2mE7H_4yGV812pD2S50y6N90bMbS_&s"
+        },
+        {
+          "id": 10,
+          "role": "Эйегон II Таргариен",
+          "actors_nik": "Том Глинн-Карни",
+          "actors_photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/741c80c1-eace-4ed0-9e6c-4893535f1202/360"
+        },
+        {
+          "id": 11,
+          "role": "Жакейрис Веларион",
+          "actors_nik": "Гарри Коллетт",
+          "actors_photo": "https://thumbs.dfs.ivi.ru/storage23/contents/3/4/ac693717b329e6dee4ca4bb87e9005.jpg"
+        },
+        {
+          "id": 12,
+          "role": "Ларис Стронг",
+          "actors_nik": "Мэттью Нихэм",
+          "actors_photo": "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRmtFeIyykFDaHyK-XvKJndcqygbydbiTd5nZLAAqj1w5GGt3fte1VK34C0eqeQJ2bC"
+        },
+        {
+          "id": 13,
+          "role": "Лейнор Веларион",
+          "actors_nik": "Джон Макмиллан",
+          "actors_photo": "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTJMkcchr9Z4Fp_dVJzBm3R7Ej9BluwaOqu2fTcYa5h_2rplEuqpO1GFDqwMm01_cSp"
+        },
+        {
+          "id": 14,
+          "role": "Леди Лейна Веларион",
+          "actors_nik": "Нанна Блонделл",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdmKLOWR-mSLKr1suoOqj3fjJ2CvgXB0ytjOWCJqC9&s"
+        },
+        {
+          "id": 15,
+          "role": "Рейна Таргариен",
+          "actors_nik": "Фиби Кэмпбелл",
+          "actors_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmNpTGynpxxrTeNdUGzDE8tayRoCxI-ltgQy1Ko8&usqp=CAE&s"
+        },
+        {
+          "id": 16,
+          "role": "Мисария",
+          "actors_nik": "Соноя Мидзуно",
+          "actors_photo": "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQEsWEMGONgJppx_aKaxQ68KhRFt7SbWoaPHIC9MN5KwidieXd-UGvGTAz6g0A4E5v9 "
+        },
+        {
+          "id": 17,
+          "role": "Корлис Веларион",
+          "actors_nik": "Стив Туссэн",
+          "actors_photo": "https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSu3BB_-RbiM75bl0Yeojpg8wPQi7Izw2xjG1qKixZUN74bNr0I9vBQgUPOzfZlAof-"
+        },
+        {
+          "id": 18,
+          "role": "Веймонд Веларион",
+          "actors_nik": "Уил Джонсон",
+          "actors_photo": "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTpsKvm5TSWBCBkytvCDMO1KTtSjo9qlPNb3Ja0fxdnV1_aVr-Te9mSpf1oWD16ocHL"
+        }
+      ],
+      "genres": [
+        {
+          "id": 1,
+          "name_ru": "фэнтези"
+        },
+        {
+          "id": 2,
+          "name_ru": "боевик"
+        },
+        {
+          "id": 3,
+          "name_ru": "драма"
+        },
+        {
+          "id": 4,
+          "name_ru": "мелодрама"
+        }
+      ],
+      "episodes": [
+        {
+          "id": 1,
+          "episodes_number": "1",
+          "episodes_title": "",
+          "episodes_url": ""
+        },
+        {
+          "id": 2,
+          "episodes_number": "2",
+          "episodes_title": "",
+          "episodes_url": ""
+        }
+      ]
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 16
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 17
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 18
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 19
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 20
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 21
+    },
+    {
+      "name_original": "fdsdfghdssadfg",
+      "name_russian": "sdfghjg",
+      "year": "dfghgfdsdfggfdd",
+      "price": "sdfgh",
+      "age_restriction": "sdfghjk",
+      "description": "dfghgfdsdf",
+      "trailer": "dfghjk",
+      "video": "dfghjk",
+      "country": "sdfghjkl",
+      "category": "",
+      "time_minutes": "sdfghjk",
+      "poster": "sdfghjkl",
+      "id": 22
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 23
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 24
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 25
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 26
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 27
+    },
+    {
+      "name_original": "asdfyui",
+      "name_russian": "1234567899o",
+      "year": "sdfghjkhgfsdfghjh",
+      "price": "fdshjklkjhgfa",
+      "age_restriction": "fghf",
+      "description": "trewertyuikjhg",
+      "trailer": "nfdfgh",
+      "video": "dfghdf",
+      "country": "gdfgh",
+      "category": "cartoons",
+      "time_minutes": "ghjfg",
+      "poster": "gh",
+      "id": 28
+    },
+    {
+      "name_original": "sasdfghjh",
+      "name_russian": "asdfghjhgfd",
+      "year": "fdsad",
+      "price": "dfghhgfdsas",
+      "age_restriction": "dfghjgf",
+      "description": "gfdsadfghjhg",
+      "trailer": "sdfghjhg",
+      "video": "fdsasdfghj",
+      "country": "dfghjgfdss",
+      "category": "movie",
+      "time_minutes": "hgfdsdfg",
+      "poster": "asdfgh",
+      "id": 29
+    },
+    {
+      "name_original": "sdfghjm,n",
+      "name_russian": "erghjh",
+      "year": "dfghjk.,hgf",
+      "price": "dsadfghjk.,,",
+      "age_restriction": "tyuiop[oiuytrewq",
+      "description": "sdfghjk.hgfds",
+      "trailer": "sdfghjkh",
+      "video": "qwertyhujil;",
+      "country": "hgfdsasdfghj",
+      "category": "movie",
+      "time_minutes": "iuytrewaqawer",
+      "poster": "wertyuiopo",
+      "id": 30
+    },
+    {
+      "name_original": "werdtfyuio",
+      "name_russian": "asdfghjkjhgfd",
+      "year": "wertyuiop",
+      "price": "wertyuiop[",
+      "age_restriction": "asdfghj",
+      "description": "reertyjkjhgfde",
+      "trailer": "wertyuikl",
+      "video": "werghjklsdfghj",
+      "country": "drftyuiop[",
+      "category": "series",
+      "time_minutes": "drtyhjsdrfgthjk",
+      "poster": "wertyuio;",
+      "id": 31
+    }
+  ]
+}
