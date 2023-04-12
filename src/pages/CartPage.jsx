@@ -10,14 +10,17 @@ import CartContext, { useCartContext } from "../contexts/CartContext";
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
+import axios from "axios";
+// import { response } from "express";
 
-export default function CardPage() {
+export default function CartPage() {
   const { cart, plusCount, minusCount, deleteMoviesFromCart } =
     useCartContext();
 
   if (cart.movies.length < 1) {
     return <h1>корзина пустая </h1>;
   }
+
   return (
     <Box style={{ background: "white" }}>
       <TableContainer sx={{ padding: "10px" }} component={Paper}>
@@ -35,8 +38,7 @@ export default function CardPage() {
             {cart.movies.map((item) => (
               <TableRow
                 key={item.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell component="th" scope="row">
                   {item.name_russian}
                 </TableCell>
@@ -58,8 +60,7 @@ export default function CardPage() {
                       } else {
                         minusCount(item.id);
                       }
-                    }}
-                  >
+                    }}>
                     -
                   </Button>
                 </TableCell>
@@ -72,12 +73,15 @@ export default function CardPage() {
             display: "flex",
             justifyContent: "space-between",
             width: "100%",
-          }}
-        >
+          }}>
           <Typography variant="h4">
             Total ptice:{cart.totalPrice?.toFixed(2)}$
           </Typography>
-          <Button component={Link} to="/success" variant="contained">
+          <Button
+            // onClick={}
+            // component={Link}
+            // to="/success"
+            variant="contained">
             Buy
           </Button>
         </Box>

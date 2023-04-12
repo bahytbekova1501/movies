@@ -15,17 +15,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import "../componets/css/navbar.css";
-import ShopIcon from "@mui/icons-material/Shop";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import GradeIcon from "@mui/icons-material/Grade";
-
-import MoreIcon from "@mui/icons-material/MoreVert";
 import {
   Accordion,
   AccordionDetails,
@@ -34,10 +23,13 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "../componets/css/navbar.css";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShopIcon from "@mui/icons-material/Shop";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 import logo from "../logo/M-red.png";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
+import { useCartContext } from "../contexts/CartContext";
 
 let pages = [
   {
@@ -59,11 +51,9 @@ const Search = styled("div")(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginRight: theme.spacing(2),
-  marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
     marginLeft: theme.spacing(3),
     width: "auto",
   },
@@ -91,19 +81,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: "20ch",
     },
   },
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
 }));
 
 export default function Navbar() {
-  const { user, logout, isAdmin } = useAuthContext();
   const { cartLength, getCart } = useCartContext();
-
-  React.useEffect(() => {
-    getCart();
-  }, []);
+  const { user, logout, isAdmin } = useAuthContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -111,14 +93,12 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const isNavOpen = Boolean(anchorElNav);
-  const [navbar, setNavbar] = React.useState(false);
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  const isNavOpen = Boolean(anchorElNav);
+  React.useEffect(() => {
+    getCart();
+  }, []);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleCloseNavMenu = (event) => {
   const handleCloseNavMenu = (event) => {
     setAnchorElNav(null);
   };
@@ -142,6 +122,7 @@ export default function Navbar() {
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
+      // sx={{ backgroundColor: "black" }}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -154,23 +135,20 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem
-        component={Link}
-        to="/auth"
-        onClick={handleMenuClose}
-        style={{ backgroundColor: "black " }}
-      >
+      onClose={handleMenuClose}>
+      <MenuItem sx={{ backgroundColor: "black" }} onClick={handleMenuClose}>
         Profile
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem sx={{ backgroundColor: "black" }} onClick={handleMenuClose}>
+        My account
+      </MenuItem>
     </Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
+      // sx={{ backgroundColor: "black" }}
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -183,44 +161,24 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      {/* иконки корзины и избранного при адаптивке */}
-      <MenuItem>
-        <IconButton
-          title="Избранное"
-          size="large"
-          aria-label="show favorites"
-          color="inherit"
-        >
+      onClose={handleMobileMenuClose}>
+      {/* <MenuItem sx={{ backgroundColor: "black" }}>
+        <IconButton size="large" aria-label="show favorites" color="inherit">
           <Badge badgeContent={1} color="error">
-            <BookmarkIcon />
+            <GradeIcon />
           </Badge>
         </IconButton>
-        <p> Избранное</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          title="Избранное"
-          size="large"
-          aria-label="show favorites"
-          color="inherit"
-        >
-          <Badge badgeContent={cartLength} color="error">
-            <ShopIcon />
-          </Badge>
-        </IconButton>
-        <p> Корзина</p>
-      </MenuItem>
-      {/*конец  иконки корзины и избранного при адаптивке */}
-      <MenuItem onClick={handleProfileMenuOpen}>
+        <p> Favorites</p>
+      </MenuItem> */}
+      <MenuItem
+        sx={{ backgroundColor: "black" }}
+        onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -242,26 +200,61 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isNavOpen}
-      onClose={handleCloseNavMenu}
-    >
+      onClose={handleCloseNavMenu}>
       <Box sx={{ width: "230px", backgroundColor: "#14213d" }}>
         <MenuItem sx={{ backgroundColor: "#14213d" }}>
-          <Accordion sx={{ width: "230px", color: "#fca311" }}>
+          {isAdmin()
+            ? pages.concat(adminPages).map((page) => (
+                <Accordion sx={{ width: "230px", color: "#fca311" }}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <Typography> Pages</Typography>
+                  </AccordionSummary>
+                  <Box>
+                    <AccordionDetails>
+                      <IconButton
+                        component={Link}
+                        to={page.link}
+                        sx={{ fontSize: "16px", color: "#000000" }}>
+                        {page.title}
+                      </IconButton>
+                    </AccordionDetails>
+                  </Box>
+                </Accordion>
+              ))
+            : pages.map((page) => (
+                <Accordion sx={{ width: "230px", color: "#fca311" }}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <Typography> Pages</Typography>
+                  </AccordionSummary>
+                  <Box>
+                    <AccordionDetails>
+                      <IconButton
+                        component={Link}
+                        to={page.link}
+                        sx={{ fontSize: "16px", color: "#000000" }}>
+                        {page.title}
+                      </IconButton>
+                    </AccordionDetails>
+                  </Box>
+                </Accordion>
+              ))}
+          {/* <Accordion sx={{ width: "230px", color: "#fca311" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography sx={{ color: "black" }}> Category 1</Typography>
+              id="panel1a-header">
+              <Typography> Category</Typography>
             </AccordionSummary>
             <Box>
               <AccordionDetails>
-                <IconButton
-                  component={Link}
-                  to="/add"
-                  sx={{ fontSize: "16px", color: "#000000" }}
-                >
-                  add movies
+                <IconButton sx={{ fontSize: "16px", color: "#000000" }}>
+                  fantasy
                 </IconButton>
               </AccordionDetails>
               <AccordionDetails>
@@ -269,132 +262,6 @@ export default function Navbar() {
                   comedy
                 </IconButton>
               </AccordionDetails>
-            </Box>
-          </Accordion>
-        </MenuItem>
-        <MenuItem>
-          <Accordion sx={{ width: "230px", color: "#fca311" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography sx={{ color: "black" }}> Category</Typography>
-            </AccordionSummary>
-            <AccordionDetails></AccordionDetails>
-          </Accordion>
-        </MenuItem>
-      </Box>
-    </Menu>
-  );
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener("scroll", changeBackground);
-  return (
-    <nav
-      style={{ color: "black" }}
-      className={navbar ? "navbar active" : "navbar"}
-    >
-      <Box
-        sx={{
-          flexGrow: 1,
-          marginTop: "-10px",
-          marginLeft: "-8px",
-          marginRight: "-8px",
-        }}
-      >
-        <AppBar
-          style={{
-            color: "#e5e5e5",
-            background: "transparent",
-          }}
-          position="static"
-        >
-          <Toolbar>
-            <IconButton
-              style={{ color: "#fca311" }}
-              onClick={handleOpenNavMenu}
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography component={Link} to={"/"}>
-              <img style={{ width: "40px" }} src={logo} alt="" srcset="" />
-            </Typography>
-
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon style={{ color: "#fca311" }} />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
-            <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <IconButton
-                size="large"
-                aria-label="show favorites"
-                color="inherit"
-              >
-                <Badge badgeContent={1} color="error">
-                  <BookmarkIcon style={{ color: "#fca311" }} />
-                </Badge>
-              </IconButton>
-
-              <IconButton
-                size="large"
-                aria-label="show favorites"
-                color="inherit"
-              >
-                <Badge
-                  component={Link}
-                  to="/cart"
-                  badgeContent={1}
-                  color="error"
-                >
-                  <ShopIcon style={{ color: "#fca311" }} />
-                </Badge>
-              </IconButton>
-
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="black"
-                sx={{ backgroundColor: "black", color: "black" }}
-              >
-                <Box>
-                  <AccountCircle />
-                </Box>
-              </IconButton>
             </Box>
           </Accordion> */}
         </MenuItem>
@@ -467,7 +334,19 @@ export default function Navbar() {
                 aria-label="show favorites"
                 color="inherit">
                 <Badge badgeContent={1} color="error">
-                  <GradeIcon style={{ color: "#fca311" }} />
+                  <BookmarkIcon style={{ color: "#fca311" }} />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show favorites"
+                color="inherit">
+                <Badge
+                  component={Link}
+                  to="/cart"
+                  badgeContent={1}
+                  color="error">
+                  <ShopIcon style={{ color: "#fca311" }} />
                 </Badge>
               </IconButton>
               {user ? (

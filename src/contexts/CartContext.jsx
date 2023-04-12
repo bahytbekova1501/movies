@@ -115,6 +115,7 @@ function CartContext({ children }) {
   const value = {
     cart: state.cart,
     cartLength: state.cartLength,
+    item: state.item,
     getCart,
     addMoviesToCart,
     deleteMoviesFromCart,

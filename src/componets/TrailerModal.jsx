@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { useMovieContext } from "../contexts/MoviesContext";
+import { useMovieContext } from "../contexts/MovieContext";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 

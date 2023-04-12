@@ -13,6 +13,7 @@ import ShopOutlinedIcon from "@mui/icons-material/ShopOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+// import { useMovieContext } from "../contexts/MoviesContext";
 
 export default function MovieCard({ item }) {
   const { deleteMovies } = useMovieContext();
