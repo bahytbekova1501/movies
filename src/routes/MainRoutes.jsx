@@ -8,7 +8,7 @@ import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
 import SuccessPage from "../pages/SuccessPage";
 import DetailsPage from "../pages/DetailsPage";
-
+//test
 function MainRoutes() {
   return (
     <Routes>
