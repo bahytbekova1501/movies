@@ -4,8 +4,11 @@ export const API = "http://localhost:8001/all";
 export const ACTIONS = {
   movies: "movies",
   oneMovie: "oneMovie",
-  pageTotalCount: "pageTotalCount",
   user: "user",
+  pageTotalCount: "pageTotalCount",
+  cart: "cart",
+  cartLength: "cartLength",
 };
+
 export const ADMINS = ["admin@gmail.com"];
 export const LIMIT = 6;

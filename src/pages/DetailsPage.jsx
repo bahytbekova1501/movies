@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useMovieContext } from "../contexts/MoviesContext";
+import { useMovieContext } from "../contexts/MovieContext";
 import "../componets/css/movie.css";
 import GradeIcon from "@mui/icons-material/Grade";
 

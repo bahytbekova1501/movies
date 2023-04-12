@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useMovieContext } from "../contexts/MoviesContext";
+import { useMovieContext } from "../contexts/MovieContext";
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-// import logo from "../logo/pngegg (2).png";
+import logo from "../logo/pngegg (2).png";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditMoviesPage() {
@@ -137,9 +137,10 @@ function EditMoviesPage() {
             marginTop: "100px",
             marginLeft: "560px",
           }}
-          //   src={logo}
+          src={logo}
           alt=""
         />
+
         <form
           onSubmit={(e) => handleSubmit(e)}
           style={{
@@ -259,7 +260,7 @@ function EditMoviesPage() {
             label="Постер"
             variant="standard"
           />
-          <TextField
+          {/* <TextField
             value={formValue.actors}
             onChange={(e) => handleChange(e)}
             name="actors"
@@ -315,7 +316,7 @@ function EditMoviesPage() {
             name="episodes_url"
             label="Ссылка на серию"
             variant="standard"
-          />
+          /> */}
           <Button
             style={{
               background: "var(--red-color)",

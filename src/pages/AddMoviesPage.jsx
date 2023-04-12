@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMovieContext } from "../contexts/MoviesContext";
+import { useMovieContext } from "../contexts/MovieContext";
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-// import logo from "../logo/pngegg (2).png";
+import logo from "../logo/pngegg (2).png";
 
 function AddMoviesPage() {
   const { addMovies } = useMovieContext();
@@ -18,25 +18,26 @@ function AddMoviesPage() {
     name_original: "",
     name_russian: "",
     year: "",
+    price: "",
     age_restriction: "",
     description: "",
     trailer: "",
     video: "",
     country: "",
     category: "",
-    type: "",
+    // type: "",
     time_minutes: "",
     poster: "",
-    actors: "",
-    actors_nik: "",
-    actors_photo: "",
-    genres: "",
-    name_ru: "",
-    episodes: "",
-    quantity: "",
-    episodes_number: "",
-    episodes_title: "",
-    episodes_url: "",
+    // actors: "",
+    // actors_nik: "",
+    // actors_photo: "",
+    // genres: "",
+    // name_ru: "",
+    // episodes: "",
+    // quantity: "",
+    // episodes_number: "",
+    // episodes_title: "",
+    // episodes_url: "",
   });
   function handleChange(e) {
     const obj = {
@@ -52,53 +53,57 @@ function AddMoviesPage() {
       !formValue.name_original.trim() ||
       !formValue.name_russian.trim() ||
       !formValue.year.trim() ||
+      !formValue.price.trim() ||
       !formValue.age_restriction.trim() ||
       !formValue.description.trim() ||
       !formValue.trailer.trim() ||
+      !formValue.video.trim() ||
       !formValue.country.trim() ||
       !formValue.category.trim() ||
-      !formValue.type.trim() ||
+      // !formValue.type.trim() ||
       !formValue.time_minutes.trim() ||
-      !formValue.poster.trim() ||
-      !formValue.actors.trim() ||
-      !formValue.actors_nik.trim() ||
-      !formValue.actors_photo.trim() ||
-      !formValue.genres.trim() ||
-      !formValue.name_ru.trim() ||
-      !formValue.episodes.trim() ||
-      !formValue.episodes_number.trim() ||
-      !formValue.episodes_title.trim() ||
-      !formValue.episodes_url.trim()
+      !formValue.poster.trim() //||
+      //     // !formValue.actors.trim() ||
+      //     // !formValue.actors_nik.trim() ||
+      //     // !formValue.actors_photo.trim() ||
+      //     // !formValue.genres.trim() ||
+      //     // !formValue.name_ru.trim() ||
+      //     // !formValue.episodes.trim() ||
+      //     // !formValue.episodes_number.trim() ||
+      //     // !formValue.episodes_title.trim() ||
+      //     // !formValue.episodes_url.trim()
     ) {
       alert("Заполните все поля");
       return;
     }
 
     addMovies(formValue);
+    console.log(formValue);
 
     setFormValue({
       name_original: "",
       name_russian: "",
       year: "",
+      price: "",
       age_restriction: "",
       description: "",
       trailer: "",
       video: "",
       country: "",
       category: "",
-      type: "",
+      // type: "",
       time_minutes: "",
       poster: "",
-      actors: "",
-      actors_nik: "",
-      actors_photo: "",
-      genres: "",
-      name_ru: "",
-      episodes: "",
-      quantity: "",
-      episodes_number: "",
-      episodes_title: "",
-      episodes_url: "",
+      //     // actors: "",
+      //     // actors_nik: "",
+      //     // actors_photo: "",
+      //     // genres: "",
+      //     // name_ru: "",
+      //     // episodes: "",
+      //     // quantity: "",
+      //     // episodes_number: "",
+      //     // episodes_title: "",
+      //     // episodes_url: "",
     });
   }
   return (
@@ -114,7 +119,8 @@ function AddMoviesPage() {
           background: "-webkit-radial-gradient(#000000, #551c06)",
           background: "radial-gradient(#621f04,#000000)",
           //   overflow: " hidden",
-        }}>
+        }}
+      >
         <img
           style={{
             width: "400px",
@@ -122,9 +128,10 @@ function AddMoviesPage() {
             marginTop: "100px",
             marginLeft: "560px",
           }}
-          //   src={logo}
+          src={logo}
           alt=""
         />
+
         <form
           onSubmit={(e) => handleSubmit(e)}
           style={{
@@ -136,11 +143,13 @@ function AddMoviesPage() {
             position: "relative",
             marginTop: "-3px",
             background: "white",
-          }}>
+          }}
+        >
           <FormControl style={{ color: "black" }} variant="standard" fullWidth>
             <InputLabel
               style={{ color: "black" }}
-              id="demo-simple-select-label">
+              id="demo-simple-select-label"
+            >
               Категория
             </InputLabel>
             <Select
@@ -149,7 +158,8 @@ function AddMoviesPage() {
               value={formValue.category}
               label="Category"
               name="category"
-              onChange={(e) => handleChange(e)}>
+              onChange={(e) => handleChange(e)}
+            >
               <MenuItem style={{ color: "black" }} value={"movie"}>
                 Фильм
               </MenuItem>
@@ -244,6 +254,16 @@ function AddMoviesPage() {
             label="Постер"
             variant="standard"
           />
+          <Box
+            style={{
+              background: "var(--red-color)",
+            }}
+          >
+            <h3 style={{ color: "white", height: "40px", textAlign: "center" }}>
+              Добавить актеров :
+            </h3>
+          </Box>
+
           <TextField
             value={formValue.actors}
             onChange={(e) => handleChange(e)}
@@ -307,7 +327,8 @@ function AddMoviesPage() {
               borderRadius: 0,
             }}
             type="submit"
-            variant="contained">
+            variant="contained"
+          >
             Add
           </Button>
         </form>

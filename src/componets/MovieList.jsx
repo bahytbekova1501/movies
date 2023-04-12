@@ -1,25 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import MovieCard from "./MovieCard";
-import { useMovieContext } from "../contexts/MoviesContext";
-import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
-import { isValidInputTimeValue } from "@testing-library/user-event/dist/utils";
+import { useMovieContext } from "../contexts/MovieContext";
+import { SearchParams, useSearchParams } from "react-router-dom";
 import { LIMIT } from "../utils/consts";
-import { Pagination } from "@mui/material";
-
+import {
+  Box,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Pagination,
+  Select,
+  TextField,
+} from "@mui/material";
+import Carousel from "better-react-carousel";
+import CarouselCard from "../componets/CarouselCard";
 function MovieList() {
   //  получаем данные из контекста
-  const { movies, getMovies, pageTotalCount } = useMovieContext();
+  const { movies, getMovies } = useMovieContext();
 
-  console.log(movies);
-  // стягиваем фильмы  из db.json
   useEffect(() => {
     getMovies();
-  });
+  }, []);
 
   return (
-    <div
+    <Box
       style={{
         display: "flex",
         justifyContent: "center",
@@ -27,10 +33,11 @@ function MovieList() {
         gap: "30px",
       }}>
       {movies.map((item) => {
-        // передаем через пропс item return
         return <MovieCard key={item.id} item={item} />;
       })}
-    </div>
+
+      <Box sx={{ maxWidth: "max-content", margin: "20px auto" }}></Box>
+    </Box>
   );
 }
 

@@ -2,7 +2,6 @@
   /* font family */
   --main-family: "Ledger", serif;
   --secondary-family: "Playfair Display SC", serif;
-  --third-family: "Rubik Pixels", cursive;
 
   /* font size */
   --main-size: 18px;
@@ -16,7 +15,8 @@
   --primary-color: #fca311;
   --third-color: #e5e5e5;
   --white-color: #ffffff;
-  --red-color: #ff0000;
-
+  --lightred-color: #ba3b0a;
+  --juicyred-color: #8c2902;
+  --red-color: #621f04;
   --container-width: 1200px;
 }
