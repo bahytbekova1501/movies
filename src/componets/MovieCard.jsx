@@ -6,15 +6,15 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useMovieContext } from "../contexts/MoviesContext";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export default function MovieCard({ item }) {
+  const { isAdmin } = useAuthContext();
   const { deleteMovies } = useMovieContext();
   console.log(item);
   return (
     <div style={{ display: "flex" }}>
       <Card
-        component={Link}
-        to={`/details/${item.id}`}
         sx={{
           maxWidth: 200,
           height: 400,
@@ -25,7 +25,10 @@ export default function MovieCard({ item }) {
           margin: 0,
         }}>
         <CardActionArea>
-          <Button style={{ padding: 0, margin: 0 }}>
+          <Button
+            component={Link}
+            to={`/details/${item.id}`}
+            style={{ padding: 0, margin: 0 }}>
             <CardMedia
               style={{}}
               component="img"
@@ -64,19 +67,23 @@ export default function MovieCard({ item }) {
                 display: "flex",
                 justifyContent: "center",
               }}>
-              <Button
-                onClick={() => deleteMovies(item.id)}
-                color="error"
-                size="small">
-                Удалить
-              </Button>
-              <Button
-                component={Link}
-                to={`/edit/${item.id}`}
-                color="warning"
-                size="small">
-                Изменить
-              </Button>
+              {isAdmin() ? (
+                <>
+                  <Button
+                    onClick={() => deleteMovies(item.id)}
+                    color="error"
+                    size="small">
+                    Удалить
+                  </Button>
+                  <Button
+                    component={Link}
+                    to={`/edit/${item.id}`}
+                    color="warning"
+                    size="small">
+                    Изменить
+                  </Button>
+                </>
+              ) : null}
             </CardActions>
           </CardContent>
         </CardActionArea>

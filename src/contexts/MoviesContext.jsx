@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { ACTIONS, API } from "../utils/consts";
+import { ACTIONS, API, LIMIT } from "../utils/consts";
 import axios from "axios";
 import DetailsPage from "../pages/DetailsPage";
 
@@ -12,6 +12,7 @@ export function useMovieContext() {
 const initState = {
   movies: [],
   oneMovie: {},
+  pageTotalCount: 1,
 };
 
 function reducer(state, action) {
@@ -20,6 +21,9 @@ function reducer(state, action) {
       return { ...state, movies: action.payload };
     case ACTIONS.oneMovie:
       return { ...state, oneMovie: action.payload };
+    case ACTIONS.pageTotalCount: {
+      return { ...state, pageTotalCount: action.payload };
+    }
     default:
       return state;
   }
@@ -31,11 +35,18 @@ function MoviesContext({ children }) {
   //функция для получения
   async function getMovies() {
     try {
-      const { data } = await axios.get(API);
+      const res = await axios.get(
+        `${API}${window.location.search || "?_limit=" + LIMIT}`
+      );
+      const totalPages = Math.ceil(res.headers["x-total-count"] / LIMIT);
       //   console.log(data);
       dispatch({
+        type: ACTIONS.pageTotalCount,
+        payload: totalPages,
+      });
+      dispatch({
         type: ACTIONS.movies,
-        payload: data,
+        payload: res.data,
       });
     } catch (error) {
       console.log(error);
@@ -85,6 +96,7 @@ function MoviesContext({ children }) {
   const value = {
     movies: state.movies,
     oneMovie: state.oneMovie,
+    pageTotalCount: state.pageTotalCount,
     getMovies,
     getOneMovie,
     addMovies,

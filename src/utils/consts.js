@@ -8,3 +8,4 @@ export const ACTIONS = {
   user: "user",
 };
 export const ADMINS = ["admin@gmail.com"];
+export const LIMIT = 6;
