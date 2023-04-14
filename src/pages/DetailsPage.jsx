@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useMovieContext } from "../contexts/MovieContext";
@@ -17,8 +17,22 @@ import BasicModal from "../componets/TrailerModal";
 
 function DetailsPage() {
   const { oneMovie, getOneMovie } = useMovieContext();
-  const genres = oneMovie.genres;
-  console.log(genres);
+  const actors = oneMovie.actors;
+  console.log(actors);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  // const length = actors.length;
+  // console.log(length);
+  // console.log(genres);
+  // const goToNextSlide = () => {
+  //   const index = (activeIndex + 1) % actors.length;
+  //   setActiveIndex(index);
+  // };
+
+  // const goToPrevSlide = () => {
+  //   const index = activeIndex === 0 ? actors.length - 1 : activeIndex - 1;
+  //   setActiveIndex(index);
+  // };
 
   const { id } = useParams();
   useEffect(() => {
@@ -162,6 +176,35 @@ function DetailsPage() {
           allowfullscreen
         ></iframe>
       </Box>
+
+      <div class="carousel-container">
+        <div
+          class="carousel-slide"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
+          <div class="card-details">
+            {/* {oneMovie.actors.map((item, index) => {
+              return (
+                <div key={index} className="carousel-card">
+                  <CardMedia
+                    style={{ position: "relative", zIndex: "-1" }}
+                    component="img"
+                    height="300"
+                    image={item.actors_photo}
+                    title={item.role}
+                  />
+                </div>
+              );
+            })} */}
+          </div>
+          {/* <button class="prev" onClick={goToPrevSlide}>
+            Prev
+          </button>
+          <button class="next" onClick={goToNextSlide}>
+            Next
+          </button> */}
+        </div>
+      </div>
     </div>
   );
 }

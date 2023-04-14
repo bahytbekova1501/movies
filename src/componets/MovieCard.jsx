@@ -13,7 +13,8 @@ import ShopOutlinedIcon from "@mui/icons-material/ShopOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-
+// import { useMovieContext } from "../contexts/MoviesContext";
+import "../componets/css/card.css";
 export default function MovieCard({ item }) {
   const { deleteMovies } = useMovieContext();
   const { addMoviesToCart, deleteMoviesFromCart, isAlreadyInCart } =
@@ -23,6 +24,7 @@ export default function MovieCard({ item }) {
   return (
     <div style={{ display: "flex" }}>
       <Card
+        className="card"
         sx={{
           maxWidth: 200,
           height: 360,

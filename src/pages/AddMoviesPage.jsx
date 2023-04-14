@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import { useMovieContext } from "../contexts/MovieContext";
 import {
   Box,
   Button,
@@ -9,10 +7,13 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import logo from "../logo/pngegg (2).png";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import React, { useState } from "react";
+import { useMovieContext } from "../contexts/MovieContext";
 
-function AddMoviesPage() {
+export default function AddMoviesPage() {
   const { addMovies } = useMovieContext();
+  //общий стэйт
 
   const [formValue, setFormValue] = useState({
     name_original: "",
@@ -25,20 +26,47 @@ function AddMoviesPage() {
     video: "",
     country: "",
     category: "",
-    // type: "",
+    time: "",
     time_minutes: "",
     poster: "",
-    // actors: "",
-    // actors_nik: "",
-    // actors_photo: "",
-    // genres: "",
-    // name_ru: "",
-    // episodes: "",
-    // quantity: "",
-    // episodes_number: "",
-    // episodes_title: "",
-    // episodes_url: "",
+    actors: [],
+    genres: [],
+    episodes: [],
   });
+
+  console.log(formValue);
+  // стэйт для актеров
+  const [actor, setActor] = useState([]);
+  const forActor = (newActor) => {
+    setActor((prev) => [...prev, newActor]);
+  };
+
+  const newActor = {
+    role: "",
+    actors_nik: "",
+    actors_photo: "",
+  };
+
+  const [genres, setGenres] = useState([]);
+  const forGenres = (newGenres) => {
+    setActor((prev) => [...prev, newGenres]);
+  };
+
+  const newGenres = {
+    name_ru: "",
+  };
+  const [episodes, setEpisodes] = useState([]);
+  const forEpisodes = (newEpisodes) => {
+    setActor((prev) => [...prev, newEpisodes]);
+  };
+
+  const newEpisodes = {
+    quantity: "",
+    episodes_number: "",
+    episodes_url: "",
+    episodes_title: "",
+  };
+
   function handleChange(e) {
     const obj = {
       ...formValue,
@@ -60,26 +88,29 @@ function AddMoviesPage() {
       !formValue.video.trim() ||
       !formValue.country.trim() ||
       !formValue.category.trim() ||
-      // !formValue.type.trim() ||
+      !formValue.time.trim() ||
       !formValue.time_minutes.trim() ||
-      !formValue.poster.trim() //||
-      //     // !formValue.actors.trim() ||
-      //     // !formValue.actors_nik.trim() ||
-      //     // !formValue.actors_photo.trim() ||
-      //     // !formValue.genres.trim() ||
-      //     // !formValue.name_ru.trim() ||
-      //     // !formValue.episodes.trim() ||
-      //     // !formValue.episodes_number.trim() ||
-      //     // !formValue.episodes_title.trim() ||
-      //     // !formValue.episodes_url.trim()
+      !formValue.poster.trim() ||
+      !actor.role.trim() ||
+      !actor.actors_nik.trim() ||
+      !actor.actors_photo.trim() ||
+      !genres.name_ru.trim() ||
+      !episodes.episodes_number.trim() ||
+      !episodes.episodes_title.trim()
     ) {
       alert("Заполните все поля");
       return;
     }
 
-    addMovies(formValue);
-    console.log(formValue);
+    addMovies(formValue, actor, genres, episodes);
+    // console.log(formValue);
 
+    setActor(newActor);
+    setGenres(newGenres);
+    setEpisodes(newEpisodes);
+  }
+
+  function clearInput(e) {
     setFormValue({
       name_original: "",
       name_russian: "",
@@ -91,250 +122,356 @@ function AddMoviesPage() {
       video: "",
       country: "",
       category: "",
-      // type: "",
+      time: "",
       time_minutes: "",
       poster: "",
-      //     // actors: "",
-      //     // actors_nik: "",
-      //     // actors_photo: "",
-      //     // genres: "",
-      //     // name_ru: "",
-      //     // episodes: "",
-      //     // quantity: "",
-      //     // episodes_number: "",
-      //     // episodes_title: "",
-      //     // episodes_url: "",
+      actors: "",
+      genres: "",
+      episodes: "",
     });
   }
   return (
-    <div>
-      <div
-        style={{
-          maxWidth: "100%",
-          height: "1200px",
-          minWidth: "600px",
+    <div
+      style={{
+        maxWidth: "100%",
+        height: "1200px",
+        minWidth: "600px",
 
-          //   position: "relative",
-          marginTop: "-60px",
-          background: "-webkit-radial-gradient(#000000, #551c06)",
-          background: "radial-gradient(#621f04,#000000)",
-          //   overflow: " hidden",
+        //   position: "relative",
+        marginTop: "-60px",
+        background: "-webkit-radial-gradient(#000000, #551c06)",
+        background: "radial-gradient(#621f04,#000000)",
+        //   overflow: " hidden",
+      }}
+    >
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        style={{
+          maxWidth: "700px",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          color: "while",
+          position: "relative",
+          marginTop: "100px",
+          // background: "white",
         }}
       >
-        <img
+        <div
           style={{
-            width: "400px",
-            height: "200px",
-            marginTop: "100px",
-            marginLeft: "560px",
-          }}
-          src={logo}
-          alt=""
-        />
-
-        <form
-          onSubmit={(e) => handleSubmit(e)}
-          style={{
-            maxWidth: "500px",
-            margin: "0 auto",
             display: "flex",
-            flexDirection: "column",
+            flexDirection: "row",
+            justifyContent: "space-around",
             color: "while",
             position: "relative",
-            marginTop: "-3px",
+            // marginTop: "-3px",
             background: "white",
           }}
         >
-          <FormControl style={{ color: "black" }} variant="standard" fullWidth>
-            <InputLabel
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "250px",
+            }}
+          >
+            <FormControl
               style={{ color: "black" }}
-              id="demo-simple-select-label"
+              variant="standard"
+              fullWidth
             >
-              Категория
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={formValue.category}
-              label="Category"
-              name="category"
+              <InputLabel
+                style={{ color: "black" }}
+                id="demo-simple-select-label"
+              >
+                Категория
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={formValue.category}
+                label="Category"
+                name="category"
+                onChange={(e) => handleChange(e)}
+              >
+                <MenuItem style={{ color: "black" }} value={"movie"}>
+                  Фильм
+                </MenuItem>
+                <MenuItem style={{ color: "black" }} value={"cartoons"}>
+                  Мультфильм
+                </MenuItem>
+                <MenuItem style={{ color: "black" }} value={"anime"}>
+                  Аниме
+                </MenuItem>
+                <MenuItem style={{ color: "black" }} value={"series"}>
+                  Сериал
+                </MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              value={formValue.name_russian}
               onChange={(e) => handleChange(e)}
-            >
-              <MenuItem style={{ color: "black" }} value={"movie"}>
-                Фильм
-              </MenuItem>
-              <MenuItem style={{ color: "black" }} value={"cartoons"}>
-                Мультфильм
-              </MenuItem>
-              <MenuItem style={{ color: "black" }} value={"anime"}>
-                Аниме
-              </MenuItem>
-              <MenuItem style={{ color: "black" }} value={"series"}>
-                Сериал
-              </MenuItem>
-            </Select>
-          </FormControl>
-          <TextField
-            value={formValue.name_russian}
-            onChange={(e) => handleChange(e)}
-            name="name_russian"
-            label="Наименование на русском"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.name_original}
-            onChange={(e) => handleChange(e)}
-            name="name_original"
-            label="Оригинальное наименование"
-            variant="standard"
-          />
-          <TextField
-            id="outlined-multiline-static"
-            multiline
-            rows={4}
-            variant="standard"
-            value={formValue.description}
-            onChange={(e) => handleChange(e)}
-            name="description"
-            label="Описание"
-          />
-          <TextField
-            value={formValue.year}
-            onChange={(e) => handleChange(e)}
-            name="year"
-            label="Год выпуска"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.price}
-            onChange={(e) => handleChange(e)}
-            name="price"
-            label="Прайс"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.country}
-            onChange={(e) => handleChange(e)}
-            name="country"
-            label="Страна"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.trailer}
-            onChange={(e) => handleChange(e)}
-            name="trailer"
-            label="Трейлер"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.video}
-            onChange={(e) => handleChange(e)}
-            name="video"
-            label="Видео"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.time_minutes}
-            onChange={(e) => handleChange(e)}
-            name="time_minutes"
-            label="Время в минутах"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.age_restriction}
-            onChange={(e) => handleChange(e)}
-            name="age_restriction"
-            label="Ограничения по вазрасту"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.poster}
-            onChange={(e) => handleChange(e)}
-            name="poster"
-            label="Постер"
-            variant="standard"
-          />
-          <Box
+              name="name_russian"
+              label="Наименование на русском"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.name_original}
+              onChange={(e) => handleChange(e)}
+              name="name_original"
+              label="Оригинальное наименование"
+              variant="standard"
+            />
+            <TextField
+              id="outlined-multiline-static"
+              multiline
+              rows={4}
+              variant="standard"
+              value={formValue.description}
+              onChange={(e) => handleChange(e)}
+              name="description"
+              label="Описание"
+            />
+            <TextField
+              value={formValue.year}
+              onChange={(e) => handleChange(e)}
+              name="year"
+              label="Год выпуска"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.price}
+              onChange={(e) => handleChange(e)}
+              name="price"
+              label="Прайс"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.country}
+              onChange={(e) => handleChange(e)}
+              name="country"
+              label="Страна"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.trailer}
+              onChange={(e) => handleChange(e)}
+              name="trailer"
+              label="Трейлер"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.video}
+              onChange={(e) => handleChange(e)}
+              name="video"
+              label="Видео"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.time}
+              onChange={(e) => handleChange(e)}
+              name="time"
+              label="Время "
+              variant="standard"
+            />
+            <TextField
+              value={formValue.time_minutes}
+              onChange={(e) => handleChange(e)}
+              name="time_minutes"
+              label="Время в минутах"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.age_restriction}
+              onChange={(e) => handleChange(e)}
+              name="age_restriction"
+              label="Ограничения по вазрасту"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.poster}
+              onChange={(e) => handleChange(e)}
+              name="poster"
+              label="Постер"
+              variant="standard"
+            />
+            <TextField
+              value={formValue.quantity}
+              onChange={(e) => handleChange(e)}
+              name="quantity"
+              label="Количество серий"
+              variant="standard"
+            />
+            <Button onClick={(e) => clearInput(e)} style={{ color: "red" }}>
+              <HighlightOffIcon />
+            </Button>
+          </div>
+          <div
             style={{
-              background: "var(--red-color)",
+              display: "flex",
+              flexDirection: "column",
+              width: "250px",
             }}
           >
-            <h3 style={{ color: "white", height: "40px", textAlign: "center" }}>
-              Добавить актеров :
-            </h3>
-          </Box>
+            <div>
+              <Box
+                style={
+                  {
+                    // background: "var(--red-color)",
+                  }
+                }
+              >
+                <h3
+                  style={{
+                    color: "var(--red-color)",
+                    height: "30px",
+                    textAlign: "center",
+                    marginTop: "3px",
+                  }}
+                >
+                  Добавить актеров :
+                </h3>
+              </Box>
+              <TextField
+                value={genres.name_ru}
+                onChange={(e) =>
+                  setGenres({ ...genres, name_ru: e.target.value })
+                }
+                name="ganres"
+                label="жанр"
+                variant="standard"
+              />
+            </div>
+            <div>
+              <Box
+                style={
+                  {
+                    // background: "var(--red-color)",
+                  }
+                }
+              >
+                <h3
+                  style={{
+                    color: "var(--red-color)",
+                    height: "30px",
+                    textAlign: "center",
+                    marginTop: "50px",
+                  }}
+                >
+                  Добавить актеров :
+                </h3>
+              </Box>
+              {/* актеры  */}
 
-          <TextField
-            value={formValue.actors}
-            onChange={(e) => handleChange(e)}
-            name="actors"
-            label="Актеры"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.actors_nik}
-            onChange={(e) => handleChange(e)}
-            name="actors_nik"
-            label="Оригинальное имя"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.actors_photo}
-            onChange={(e) => handleChange(e)}
-            name="actors_photo"
-            label="Фото актера"
-            variant="standard"
-          />
+              <TextField
+                value={actor.role}
+                onChange={(e) => setActor({ ...actor, role: e.target.value })}
+                name="role"
+                label="Роль"
+                variant="standard"
+              />
+              <TextField
+                value={actor.actors_nik}
+                onChange={(e) =>
+                  setActor({ ...actor, actors_nik: e.target.value })
+                }
+                name="actors_nik"
+                label="Оригинальное имя"
+                variant="standard"
+              />
+              <TextField
+                value={actor.actors_photo}
+                onChange={(e) =>
+                  setActor({ ...actor, actors_photo: e.target.value })
+                }
+                name="actors_photo"
+                label="Ссылка на фото актера"
+                variant="standard"
+              />
+              {/* <Button
+                onSubmit={(e) => handleSubmitFromActors(e)}
+                type="submit"
+                title="добавить"
+                style={{ backgroundColor: "red" }}
+              >
+                <AddIcon />
+              </Button>
+               */}
+            </div>
+            {/* серии */}
+            <div>
+              <Box
+                style={
+                  {
+                    // background: "var(--red-color)",
+                  }
+                }
+              >
+                <h3
+                  style={{
+                    color: "var(--red-color)",
+                    height: "30px",
+                    textAlign: "center",
+                    marginTop: "50px",
+                  }}
+                >
+                  Добавить серии:
+                </h3>
+              </Box>
 
-          <TextField
-            value={formValue.episodes}
-            onChange={(e) => handleChange(e)}
-            name="episodes"
-            label="Серии"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.quantity}
-            onChange={(e) => handleChange(e)}
-            name="quantity"
-            label="Количество серий"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.episodes_number}
-            onChange={(e) => handleChange(e)}
-            name="episodes_number"
-            label="Номер серии"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.episodes_title}
-            onChange={(e) => handleChange(e)}
-            name="episodes_title"
-            label="Наименование серии"
-            variant="standard"
-          />
-          <TextField
-            value={formValue.episodes_url}
-            onChange={(e) => handleChange(e)}
-            name="episodes_url"
-            label="Ссылка на серию"
-            variant="standard"
-          />
-          <Button
-            style={{
-              background: "var(--red-color)",
-              borderRadius: 0,
-            }}
-            type="submit"
-            variant="contained"
-          >
-            Add
-          </Button>
-        </form>
-      </div>
+              <TextField
+                value={episodes.episodes_number}
+                onChange={(e) =>
+                  setEpisodes({ ...episodes, episodes_number: e.target.value })
+                }
+                name="episodes_number"
+                label="Номер серии"
+                variant="standard"
+              />
+              <TextField
+                value={episodes.episodes_title}
+                onChange={(e) =>
+                  setEpisodes({ ...episodes, episodes_title: e.target.value })
+                }
+                name="episodes_title"
+                label="Наименование серии"
+                variant="standard"
+              />
+              <TextField
+                value={episodes.episodes_url}
+                onChange={(e) =>
+                  setEpisodes({ ...episodes, episodes_url: e.target.value })
+                }
+                name="episodes_url"
+                label="Ссылка на серию"
+                variant="standard"
+              />
+              {/* <Button title="добавить еще" style={{ backgroundColor: "red" }}>
+                  <AddIcon />
+                </Button> */}
+            </div>
+          </div>
+        </div>
+        <Button
+          style={{
+            background: "var(--red-color)",
+            borderRadius: 0,
+          }}
+          type="submit"
+          variant="contained"
+          title="добавить  карточку "
+          onClick={(e) =>
+            setFormValue({
+              ...formValue,
+              actors: [...formValue.actors, actor],
+              genres: [...formValue.genres, genres],
+              episodes: [...formValue.episodes, episodes],
+            })
+          }
+        >
+          Добавить
+        </Button>
+      </form>
     </div>
   );
 }
-
-export default AddMoviesPage;

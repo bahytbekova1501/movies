@@ -1,6 +1,6 @@
 import React from "react";
 // import video from "../videos/4k.webm";
-import "../componets/css/Pages.css";
+
 import logoMarvel from "../logo/marvelStudios.png";
 import MovieList from "../componets/MovieList";
 import logoAvangers from "../logo/end game.png";
@@ -8,26 +8,25 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import logo from "../logo/homePicture.jpg";
 import CarouselCard from "../componets/CarouselCard";
+import "../componets/css/carousel.css";
+import "../componets/css/Pages.css";
+import { Box } from "@mui/material";
 // test
 function HomePage() {
   return (
     <>
-      <div style={{ height: "600px" }}>
-        <img
-          style={{
-            maxWidth: "100%",
-            position: "relative",
-            marginTop: " -65px",
-            zIndex: -1,
-          }}
-          src={logo}
-          alt=""
-        />
-        <div style={{ marginTop: "-400px" }}>
-          <CarouselCard />
-        </div>
+      <img
+        style={{
+          maxWidth: "100%",
+          position: "relative",
+          marginTop: " -65px",
+          zIndex: -1,
+        }}
+        src={logo}
+        alt=""
+      />
 
-        {/* <video
+      {/* <video
           style={{
             maxWidth: "100%",
             // position: "absolute",
@@ -40,7 +39,7 @@ function HomePage() {
           loop
           muted
         ></video> */}
-        {/* <div
+      {/* <div
           className="logo-div"
           style={{
             maxWidth: "100%",
@@ -84,9 +83,14 @@ function HomePage() {
             </Button>
           </Stack>
         </div>*/}
-      </div>
-      <div style={{ height: "600px" }}></div>
 
+      <Box
+        className="carousel-home"
+        style={{ position: "relative", marginTop: "-250px" }}
+      >
+        <CarouselCard />
+      </Box>
+      <div style={{ height: "400px" }}></div>
       <MovieList />
       <div style={{ position: "absolute", marginTop: "100px" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore rem

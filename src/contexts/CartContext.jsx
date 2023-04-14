@@ -33,7 +33,7 @@ function getDataFromLS() {
       movies: [],
       totalPrice: 0,
     };
-    console.log(data);
+    // console.log(data);
   }
   return data;
 }

@@ -1,5 +1,5 @@
-@media all and (max-width: 1200px) {
-  .carousel {
-    columns: 6;
+@media all and (max-width: 800px) {
+  .card-box {
+    display: none;
   }
 }

@@ -34,3 +34,4 @@ function Toastify() {
     />
   );
 }
+export default Toastify;
